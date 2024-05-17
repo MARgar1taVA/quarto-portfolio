@@ -3,8 +3,8 @@ project:
 
 website:
   title: "Margarita Valdés A., PhD"
-  site-url: https://www.myportafolio_mva.io
-  description: "A great sample blog"
+  description: "This is Margarita Valdes' personal Data Analysis portafolio"
+  site-url: "https://margar1tava.quarto.pub/portafolio/"
   navbar:
     left: 
       - text: Portfolio

@@ -2,6 +2,7 @@
 title: "Bellabeat Case Study"
 author: "Margarita Valdés A."
 date: "2024-05-09"
+description: "The following analysis was done for the Capstone Project in order to complete the Google Data Analytics Certificate"
 categories: [Data Analysis, SQL, Google Sheets]
 title-block-banner: "#FAB8AA"
 title-block-banner-color: "white"
@@ -12,7 +13,7 @@ image: Bellabeat_logo.png
 
 The following analysis was performed using BigQuery (SQL) and Connected Sheets (Google Sheets)
 
-![](Bellabeat_leaf.jpeg){width="85%" fig-align="center"}
+![](Bellabeat_leaf.jpeg){width="65%" fig-align="center"}
 
 ### 1. Summary of business task
 

@@ -10,9 +10,6 @@ about:
     - icon: github
       text: Github
       href: https://github.com/MARgar1taVA
-    - icon: envelope-at
-      text: e-mail
-      href: valdes.aleman.margarita@gmail.com"
 ---
 
 Add a brief description of my background

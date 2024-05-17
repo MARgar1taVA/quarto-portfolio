@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.myportafolio_mva.io/posts/Bellabeat Case/index.html</loc>
-    <lastmod>2024-05-17T03:53:18.610Z</lastmod>
+    <loc>https://0e6cdd57-29bc-4c6d-9e6e-7e3071736955.netlify.app/about.html</loc>
+    <lastmod>2024-05-17T21:10:02.926Z</lastmod>
   </url>
   <url>
-    <loc>https://www.myportafolio_mva.io/index.html</loc>
-    <lastmod>2024-05-10T06:54:07.989Z</lastmod>
+    <loc>https://0e6cdd57-29bc-4c6d-9e6e-7e3071736955.netlify.app/posts/Bellabeat Case/index.html</loc>
+    <lastmod>2024-05-17T20:58:06.948Z</lastmod>
   </url>
   <url>
-    <loc>https://www.myportafolio_mva.io/resume.html</loc>
+    <loc>https://0e6cdd57-29bc-4c6d-9e6e-7e3071736955.netlify.app/resume.html</loc>
     <lastmod>2024-05-10T01:44:56.911Z</lastmod>
+  </url>
+  <url>
+    <loc>https://0e6cdd57-29bc-4c6d-9e6e-7e3071736955.netlify.app/index.html</loc>
+    <lastmod>2024-05-17T20:53:23.048Z</lastmod>
+  </url>
+  <url>
+    <loc>https://margar1tava.quarto.pub/portafolio/index.html</loc>
+    <lastmod>2024-05-17T20:53:23.048Z</lastmod>
   </url>
 </urlset>

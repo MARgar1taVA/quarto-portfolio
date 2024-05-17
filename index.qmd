@@ -1,5 +1,6 @@
 ---
 title: "Portfolio"
+description: "This is Margarita Valdes' personal Data Analysis portafolio"
 listing:
   contents: posts
   sort: "date desc"

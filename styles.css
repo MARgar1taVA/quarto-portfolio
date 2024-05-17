@@ -1,1 +1,14 @@
 /* css styles */
+
+.sql .keyword {
+  color: purple;
+  font-weight: bold;
+}
+
+.sql .operator {
+  color: pink;
+}
+
+.colored-text {
+    color: #434341; /* Choose your color */
+}

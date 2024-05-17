@@ -1,18 +1,18 @@
 ---
 title: "About"
-image: profile.jpg
+image: IMG_1929.jpeg
 about:
   template: jolla
   links:
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://www.linkedin.com/in/m-valdes-aleman/
     - icon: github
       text: Github
-      href: https://github.com
+      href: https://github.com/MARgar1taVA
+    - icon: envelope-at
+      text: e-mail
+      href: valdes.aleman.margarita@gmail.com"
 ---
 
-About this blog
+Add a brief description of my background

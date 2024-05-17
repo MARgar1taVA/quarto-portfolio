@@ -1,9 +1,10 @@
 ---
-title: "Post With Code"
-author: "Harlow Malloc"
-date: "2024-05-08"
-categories: [news, code, analysis]
+title: "Project with R"
+author: "Margarita Valdés A."
+date: "2024-05-12"
+categories: [Data Analysis, R, ggplot]
 image: "image.jpg"
+draft: true
 ---
 
 This is a post with executable code.

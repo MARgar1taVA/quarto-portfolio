@@ -3,17 +3,25 @@ project:
 
 website:
   title: "Margarita Valdés A., PhD"
+  site-url: https://www.myportafolio_mva.io
+  description: "A great sample blog"
   navbar:
+    left: 
+      - text: Portfolio
+        href: index.qmd
+      - text: Resume
+        href: resume.qmd
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/MARgar1taVA
+      - icon: linkedin
+        href: https://www.linkedin.com/in/m-valdes-aleman/
 format:
   html:
     theme: cosmo
     css: styles.css
+    highlight-style: tango
 
 editor: visual
 

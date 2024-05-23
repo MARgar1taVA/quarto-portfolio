@@ -1,3 +1,28 @@
 ---
 title: "Resume"
+title-block-banner: "#8fbac1"
 ---
+
+## Experience
+
+Morelos Children's Hospital, Diagnostic and Molecular Medicine Unit \|
+Postdoctoral Researcher \| June 2020 - November 2023
+
+Leibniz Institute of Virology, Viral Transformation Lab \| PhD Researcher \| 
+September 2012 - October 2018
+
+Becerril, Coca & Becerril C.V \| Biotechnology Engineer \| January 2012 - May 2018
+
+
+## Education
+
+University of Hamburg, Germany \| Doctor of Philosophy, Faculty of Mathematics, Informatics and Natural Sciences \| Sept 2012 - Oct 2018
+
+National Autonomous University of Mexico, Mexico \| Masters in Biochemical Sciences, Biotechnology Institute \| Sept 2009 - June 2011
+
+National Autonomous University of Morelos, Mexico \| Bachelor of Science in Biochemestry and Molecular Biology, Faculty of Science\| Sept 2004 - June 2008
+
+
+
+
+

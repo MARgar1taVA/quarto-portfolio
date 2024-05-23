@@ -1,13 +1,21 @@
 ---
-title: "Portfolio"
-description: "This is Margarita Valdes' personal Data Analysis portafolio"
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: true
+title: "About"
+image: profile.jpg
+about:
+  template: jolla
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/m-valdes-aleman/
+    - icon: github
+      text: Github
+      href: https://github.com/MARgar1taVA
+    - icon: envelope-fill
+      text: contact
+      href: mailto:valdes.aleman.margarita@gmail.com  
 ---
+
+
+My name is Margarita, I am a Data Analyst with a strong foundation in science. I hold a PhD in Molecular Virology and possess experience analyzing large datasets from questionnaires and experimental measurements. During my research, I honed my skills in statistical analysis, data visualization, and problem-solving to tackle complex scientific questions using data. I'm also proficient in R. My passion lies in transforming raw data into insights that can drive informed decision-making.
+
+

@@ -3,20 +3,20 @@ project:
 
 website:
   title: "Margarita Valdés A., PhD"
-  description: "This is Margarita Valdes' personal Data Analysis portafolio"
-  site-url: "https://margar1tava.quarto.pub/portafolio/"
+  description: "This is Margarita Valdes' personal Data Analysis portfolio"
+  site-url: "https://margar1tava.quarto.pub/portfolio/"
   navbar:
-    left: 
+    right: 
       - text: Portfolio
-        href: index.qmd
+        href: blog.qmd
       - text: Resume
         href: resume.qmd
-    right:
-      - about.qmd
       - icon: github
         href: https://github.com/MARgar1taVA
       - icon: linkedin
         href: https://www.linkedin.com/in/m-valdes-aleman/
+      - icon: envelope-fill
+        href: mailto:valdes.aleman.margarita@gmail.com 
 format:
   html:
     theme: cosmo

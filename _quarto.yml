@@ -5,7 +5,12 @@ website:
   title: "Margarita Valdés A., PhD"
   description: "This is Margarita Valdes' personal Data Analysis portfolio"
   site-url: "https://margar1tava.quarto.pub/portfolio/"
+  favicon: "profile.jpg"
+  page-footer: 
+    left:
+      [made with Quarto]
   navbar:
+    background: light
     right: 
       - text: Portfolio
         href: blog.qmd
@@ -17,11 +22,12 @@ website:
         href: https://www.linkedin.com/in/m-valdes-aleman/
       - icon: envelope-fill
         href: mailto:valdes.aleman.margarita@gmail.com 
-format:
-  html:
-    theme: cosmo
-    css: styles.css
-    highlight-style: tango
+ 
+theme: 
+  - cosmo
+  - styles.scss
+
+highlight-style: tango
 
 editor: visual
 

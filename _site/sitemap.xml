@@ -1,55 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://0e6cdd57-29bc-4c6d-9e6e-7e3071736955.netlify.app/about.html</loc>
-    <lastmod>2024-05-17T21:10:02.926Z</lastmod>
-  </url>
-  <url>
-    <loc>https://0e6cdd57-29bc-4c6d-9e6e-7e3071736955.netlify.app/posts/Bellabeat Case/index.html</loc>
-    <lastmod>2024-05-17T20:58:06.948Z</lastmod>
-  </url>
-  <url>
-    <loc>https://0e6cdd57-29bc-4c6d-9e6e-7e3071736955.netlify.app/resume.html</loc>
-    <lastmod>2024-05-10T01:44:56.911Z</lastmod>
-  </url>
-  <url>
-    <loc>https://0e6cdd57-29bc-4c6d-9e6e-7e3071736955.netlify.app/index.html</loc>
-    <lastmod>2024-05-17T20:53:23.048Z</lastmod>
-  </url>
-  <url>
-    <loc>https://margar1tava.quarto.pub/portafolio/index.html</loc>
-    <lastmod>2024-05-18T17:37:23.107Z</lastmod>
-  </url>
-  <url>
-    <loc>https://margar1tava.quarto.pub/portafolio/posts/Bellabeat Case/index.html</loc>
-    <lastmod>2024-05-22T21:54:15.760Z</lastmod>
-  </url>
-  <url>
-    <loc>https://margar1tava.quarto.pub/portafolio/about.html</loc>
-    <lastmod>2024-05-18T17:37:23.107Z</lastmod>
-  </url>
-  <url>
-    <loc>https://margar1tava.quarto.pub/portafolio/resume.html</loc>
-    <lastmod>2024-05-10T01:44:56.911Z</lastmod>
-  </url>
-  <url>
-    <loc>https://margar1tava.quarto.pub/portafolio/blog.html</loc>
-    <lastmod>2024-05-22T21:51:39.577Z</lastmod>
-  </url>
-  <url>
-    <loc>https://margar1tava.quarto.pub/portfolio/index.html</loc>
-    <lastmod>2024-05-23T23:08:57.983Z</lastmod>
-  </url>
-  <url>
     <loc>https://margar1tava.quarto.pub/portfolio/blog.html</loc>
     <lastmod>2024-05-23T21:04:22.367Z</lastmod>
   </url>
   <url>
     <loc>https://margar1tava.quarto.pub/portfolio/posts/Bellabeat Case/index.html</loc>
-    <lastmod>2024-05-23T22:07:17.617Z</lastmod>
+    <lastmod>2024-05-25T00:12:13.632Z</lastmod>
   </url>
   <url>
     <loc>https://margar1tava.quarto.pub/portfolio/resume.html</loc>
-    <lastmod>2024-05-23T21:38:11.279Z</lastmod>
+    <lastmod>2024-06-02T00:40:59.854Z</lastmod>
+  </url>
+  <url>
+    <loc>https://margar1tava.quarto.pub/portfolio/index.html</loc>
+    <lastmod>2024-05-25T00:14:27.913Z</lastmod>
   </url>
 </urlset>

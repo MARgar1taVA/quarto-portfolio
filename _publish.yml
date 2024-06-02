@@ -1,4 +1,6 @@
 - source: project
   quarto-pub:
     - id: 0e6cdd57-29bc-4c6d-9e6e-7e3071736955
-      url: 'https://margar1tava.quarto.pub/portafolio'
+      url: 'https://margar1tava.quarto.pub/portfolio'
+    - id: c7a859f4-aaa9-4883-91f9-5719bc68bfbc
+      url: 'https://margar1tava.quarto.pub/margarita-valdés-a-phd'

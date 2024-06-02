@@ -67,6 +67,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../profile.jpg" rel="icon" type="image/jpeg">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -111,8 +112,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<link rel="stylesheet" href="../../styles.css">
-<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -147,6 +146,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://www.linkedin.com/in/m-valdes-aleman/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:valdes.aleman.margarita@gmail.com"> <i class="bi bi-envelope-fill" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -206,11 +210,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#how-can-a-wellness-technology-company-pay-it-smart" id="toc-how-can-a-wellness-technology-company-pay-it-smart" class="nav-link active" data-scroll-target="#how-can-a-wellness-technology-company-pay-it-smart">How can a Wellness Technology Company Pay it Smart?</a></li>
   <li><a href="#summary-of-business-task" id="toc-summary-of-business-task" class="nav-link" data-scroll-target="#summary-of-business-task">1. Summary of business task</a></li>
-  <li><a href="#description-of-used-datasets" id="toc-description-of-used-datasets" class="nav-link" data-scroll-target="#description-of-used-datasets">2. Description of used datasets</a></li>
+  <li><a href="#description-of-the-datasets" id="toc-description-of-the-datasets" class="nav-link" data-scroll-target="#description-of-the-datasets">2. Description of the datasets</a></li>
   <li><a href="#observations-about-the-data" id="toc-observations-about-the-data" class="nav-link" data-scroll-target="#observations-about-the-data">3. Observations about the data</a></li>
-  <li><a href="#documentation-of-any-cleaning-or-manipulation-of-the-data" id="toc-documentation-of-any-cleaning-or-manipulation-of-the-data" class="nav-link" data-scroll-target="#documentation-of-any-cleaning-or-manipulation-of-the-data">4. Documentation of any cleaning or manipulation of the data</a></li>
-  <li><a href="#analysis-supporting-visualizations-and-key-findings" id="toc-analysis-supporting-visualizations-and-key-findings" class="nav-link" data-scroll-target="#analysis-supporting-visualizations-and-key-findings">5. Analysis, Supporting visualizations and key findings</a></li>
-  <li><a href="#top-high-level-recommendations-for-the-marketing-team-based-on-the-analysis" id="toc-top-high-level-recommendations-for-the-marketing-team-based-on-the-analysis" class="nav-link" data-scroll-target="#top-high-level-recommendations-for-the-marketing-team-based-on-the-analysis">6. Top high-level recommendations for the marketing team, based on the analysis</a></li>
+  <li><a href="#cleaning-or-manipulation-of-the-data" id="toc-cleaning-or-manipulation-of-the-data" class="nav-link" data-scroll-target="#cleaning-or-manipulation-of-the-data">4. Cleaning or manipulation of the data</a></li>
+  <li><a href="#data-analysis-visualizations-and-key-findings" id="toc-data-analysis-visualizations-and-key-findings" class="nav-link" data-scroll-target="#data-analysis-visualizations-and-key-findings">5. Data Analysis, visualizations and key findings</a></li>
+  <li><a href="#top-high-level-recommendations" id="toc-top-high-level-recommendations" class="nav-link" data-scroll-target="#top-high-level-recommendations">6. Top high-level recommendations</a></li>
   </ul>
 </nav>
     </div>
@@ -237,8 +241,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Business task:</strong> Analyze smart device data to gain insight into how consumers are using their smart devices. Focus on one of Bellabeat’s products and give insights about what was discovered in the analysis, to help guide the marketing strategy for the company.</p>
 </blockquote>
 </section>
-<section id="description-of-used-datasets" class="level3">
-<h3 class="anchored" data-anchor-id="description-of-used-datasets">2. Description of used datasets</h3>
+<section id="description-of-the-datasets" class="level3">
+<h3 class="anchored" data-anchor-id="description-of-the-datasets">2. Description of the datasets</h3>
 <p>The data used for this analysis was downloaded from the Kaggle page: <a href="https://www.kaggle.com/datasets/arashnic/fitbit">FitBit Fitness Tracker Data</a>. The data comes from Fitbit users that responded to a survey via Amazon Mechanical Turk. The data was collected from 03.12.2016 to 05.12.2016.</p>
 <p>The downloaded data came in two folders, one for each month of collected data:</p>
 <ol type="I">
@@ -291,8 +295,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>To understand the collected data I inspected each dataset in SQL to assess how many unique Ids were available per data set and whether they were shared in the other sets.</p>
 </section>
-<section id="documentation-of-any-cleaning-or-manipulation-of-the-data" class="level3">
-<h3 class="anchored" data-anchor-id="documentation-of-any-cleaning-or-manipulation-of-the-data">4. Documentation of any cleaning or manipulation of the data</h3>
+<section id="cleaning-or-manipulation-of-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="cleaning-or-manipulation-of-the-data">4. Cleaning or manipulation of the data</h3>
 <p>Before I could import the datasets as tables to BigQuery, I cleaned the data using Google Sheets. I searched for duplicates and formatted all the Dates columns since BigQuery did not recognize the date-time format with AM/PM at the end.</p>
 <p>I then proceeded to check for unique Ids in all datasets and to compare if they were shared among them using the following queries:</p>
 <ul>
@@ -409,8 +413,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> table1.ActivityDate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>I exported both tables, ‘<a href="https://docs.google.com/spreadsheets/u/0/d/1t77PP57iQvmFs8GY-0EVO0beCyr7BQs9fgS3IO7TmtM/edit">all_data</a>’ and ‘<a href="https://docs.google.com/spreadsheets/u/0/d/1r3KuBizQ_1iJK5dxQooZ_-jjMNlL3q0xiV-2HCSbHBM/edit">daily_activity_summary</a>’, to Connected Sheets to further explore, analyze and make visualizations.</p>
 </section>
-<section id="analysis-supporting-visualizations-and-key-findings" class="level3">
-<h3 class="anchored" data-anchor-id="analysis-supporting-visualizations-and-key-findings">5. Analysis, Supporting visualizations and key findings</h3>
+<section id="data-analysis-visualizations-and-key-findings" class="level3">
+<h3 class="anchored" data-anchor-id="data-analysis-visualizations-and-key-findings">5. Data Analysis, visualizations and key findings</h3>
 <p>I first analyzed how the data was collected during those 62 days and how many unique Ids recorded activities using the table ‘<a href="https://docs.google.com/spreadsheets/u/0/d/1t77PP57iQvmFs8GY-0EVO0beCyr7BQs9fgS3IO7TmtM/edit">all_data</a>’. I found that the number of recorded activities during the first month (march) were very low, and most users started recording until 01.04.2016 and up to 12-05-2016. There was oddly one day with more than 60 recorded activities, but for the most part, that period it looked even.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -472,10 +476,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
-<section id="top-high-level-recommendations-for-the-marketing-team-based-on-the-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="top-high-level-recommendations-for-the-marketing-team-based-on-the-analysis">6. Top high-level recommendations for the marketing team, based on the analysis</h3>
+<section id="top-high-level-recommendations" class="level3">
+<h3 class="anchored" data-anchor-id="top-high-level-recommendations">6. Top high-level recommendations</h3>
 <blockquote class="blockquote">
-<p><strong>Important Note:</strong> These suggestions are made based on the above described dataset, which consists of a very small sample of 35 individuals from which we do not have information about their gender or age. Also, the data was only collected during two months. Further focusing on a dataset with more individuals, preferably female (since that is Bellabeat’s target group) and including more months of data would give more accurate information.</p>
+<p><strong>Important Note:</strong> These suggestions are made based on the above described dataset, which consists of a very small sample of 35 individuals from which we do not have information about their gender or age. Also, the data was only collected during two months. Further focusing on a dataset with a bigger sample, preferably focusing on female individuals qu(since that is Bellabeat’s target group) and including more months of data would give more accurate information.</p>
 </blockquote>
 <ul>
 <li><p>One of the first observations is that not all users are consistent in using their tracker. I would suggest focusing on the positive characteristics of the Bellabeat Ivy+, such as being lightweight, hypoallergenic, discrete and stylish, waterproof, and its long lasting battery. All which makes it a tracker that can be worn daily without needing to take it off to go to bed or to shower, helping to record your daily measurements in a consistent manner and to get more accurate trends and recommendations.&nbsp;</p></li>
@@ -568,7 +572,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/margar1tava\.quarto\.pub\/portfolio\/");
+      var filterRegex = new RegExp("https:\/\/margar1tava\.quarto\.pub\/portfolio");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -897,6 +901,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ made with Quarto
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

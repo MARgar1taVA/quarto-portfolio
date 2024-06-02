@@ -1,28 +1,67 @@
 ---
-title: "Resume"
-title-block-banner: "#8fbac1"
+title: "Margarita's resume"
+date: "2024-06-01"
+title-block-banner: "#AFCCDA"
 ---
 
 ## Experience
 
-Morelos Children's Hospital, Diagnostic and Molecular Medicine Unit \|
-Postdoctoral Researcher \| June 2020 - November 2023
+#### **Center for Transdisciplinary Research in Psychology, UAEM. Mexico**   *Fellow Researcher*
 
-Leibniz Institute of Virology, Viral Transformation Lab \| PhD Researcher \| 
-September 2012 - October 2018
+JAN 2024 - PRESENT
 
-Becerril, Coca & Becerril C.V \| Biotechnology Engineer \| January 2012 - May 2018
+-   **Data Management & Analysis:** Led the design, implementation, and maintenance of comprehensive databases for experimental data. Applied data cleaning protocols to ensure data integrity and accuracy. Performed in-depth statistical analysis and created insightful visualizations (using R,  ggplot2) to reveal trends and patterns in complex datasets.
 
+-   **Training & Knowledge Sharing:** Developed and delivered workshops on statistics, programming in R, and data analysis techniques, empowering colleagues to enhance their research capabilities.
+
+#### **Morelos Children's Hospital, Mexico**   *Postdoctoral Researcher*
+
+JUN  2020 - NOV  2023
+
+-   **Data Collection & Analysis:** Designed and managed the implementation of patient surveys, defining key metrics and ensuring data quality. Collaborated with diverse healthcare teams to gather requirements and collect patient samples. Conducted comprehensive analysis of survey and patient sample data, utilizing R (ggplot2, gt) to create informative visualizations that effectively communicated research findings to stakeholders.
+
+-   **Health Education:** Organized and presented informative talks on the health risks associated with viral diseases to raise awareness among the public.
+
+#### **Leibniz Institute for Virology, Hamburg**   *Doctoral Researcher*
+
+SEP 2012 - OCT 2018
+
+-   **Large-Scale Data Analysis:** Designed and executed experiments involving large-scale sequencing data analysis of thousands of transcripts across diverse conditions. Employed bioinformatics tools to identify significant changes induced by viral infection, contributing to a deeper understanding of viral mechanisms.
+
+-   **Scientific Communication:** Presented research findings at international conferences, showcasing the ability to effectively communicate complex data analysis to a scientific audience.
+
+#### **BC & B  Law & Business, Mexico**   *Biotechnology Engineer*
+
+JAN - MAY  2012
+
+-   **Patent Analysis & Consultation:** Provided expert consultation to national and international companies, guiding them through the patent application process under Mexican industrial proper
+
+## **Courses & Certifications**
+
+**Google Data Analytics Professional Certificate** \| Google, Coursera\| 2024
+
+**Data Cleaning with R Course** \| R for the Rest of Us \| 2022
+
+**R Programming** \| Johns Hopkins University, Coursera \| 2015
 
 ## Education
 
-University of Hamburg, Germany \| Doctor of Philosophy, Faculty of Mathematics, Informatics and Natural Sciences \| Sept 2012 - Oct 2018
+#### **Hamburg University, Germany** \| *Doctoral degree*
 
-National Autonomous University of Mexico, Mexico \| Masters in Biochemical Sciences, Biotechnology Institute \| Sept 2009 - June 2011
+Doctor of Philosophy, Virology \| Faculty of Mathematics, Informatics and  Natural Sciences.
 
-National Autonomous University of Morelos, Mexico \| Bachelor of Science in Biochemestry and Molecular Biology, Faculty of Science\| Sept 2004 - June 2008
+JUN 2012 - OCT  2018
 
+#### **National Autonomous University of Mexico, Mexico** \| *Master’s Degree*
 
+Masters in Biochemical Sciences \| Biotechnology Institute.
 
+FEB 2009 - NOV 2011
 
+#### **National Autonomous University of Morelos, Mexico** \| *Bachelor’s Degree*
 
+Bachelor of Science in Biochemistry and Molecular Biology \| Faculty of Sciences.
+
+AUG 2004 - DEC 2008
+
+\

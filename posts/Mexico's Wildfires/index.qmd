@@ -1,0 +1,18 @@
+---
+title: "Wildfires in Mexico (2024)"
+author: "Margarita Valdés A."
+date: "2024-06-10"
+categories: [Data Visualization, Tableau]
+image: "fires_mexico.png"
+title-block-banner: "#C2D6C0"
+format: html
+draft: false
+---
+
+The following Tableau Dashboard was made using the latest data about wildfires in Mexico from the [National Concentration of Forest Fires in protected natural areas](https://monitor_incendios.cnf.gob.mx/incendios_anp). The captured data spans from January to the first week of June 2024. To get a better view of the dashboard, click on the "full screen" button in the lower right corner.
+
+The data is in Spanish, but it encompasses the number of wildfires per week, the damaged area, the states where the fires occurred in, the type of vegetation damaged by the fires, and possible causes for the fires. The dashboard allows you to filter by each of the variables by clicking, or filtering by a range of weeks on the upper bar.
+
+```{=html}
+<div class='tableauPlaceholder' id='viz1718067350759' style='position: relative'><noscript><a href='#'><img alt='Incendios semanales en México en 2024** de enero a inicios de junio ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;in&#47;incendiosenMxico2024&#47;IncendiosenMexico&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='incendiosenMxico2024&#47;IncendiosenMexico' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;in&#47;incendiosenMxico2024&#47;IncendiosenMexico&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1718067350759');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.maxWidth='1150px';vizElement.style.height=(divElement.offsetWidth*1.35)+'px';vizElement.style.maxHeight='1887px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+```

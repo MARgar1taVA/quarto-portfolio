@@ -109,7 +109,7 @@ ON table1.id = table2.id
 From applying the queries above to all tables, I made this summary of the Ids that were shared between datasets to understand how big the sample was, and how I could join the datasets.
 
 |                    |            |                                |                               |
-|------------------|------------------|------------------|------------------|
+|--------------------|------------|--------------------------------|-------------------------------|
 | Datasets           | Unique Ids | Shared with daily_activity_3_4 | Shared with weightLogInfo_3_4 |
 | daily_activity_3_4 | 35         | 35                             | \-                            |
 | daily_activity_4_5 | 35         | 33                             | \-                            |
@@ -220,7 +220,7 @@ When checking for the average hours of sleep during the week, Sunday and Monday 
 
 ![](Total%20Hours%20of%20Sleep%20per%20day.png){fig-align="center"}
 
-### 6. Top high-level recommendations 
+### 6. Top high-level recommendations
 
 > **Important Note:** These suggestions are made based on the above described dataset, which consists of a very small sample of 35 individuals from which we do not have information about their gender or age. Also, the data was only collected during two months. Further focusing on a dataset with a bigger sample, preferably focusing on female individuals qu(since that is Bellabeat's target group) and including more months of data would give more accurate information.
 

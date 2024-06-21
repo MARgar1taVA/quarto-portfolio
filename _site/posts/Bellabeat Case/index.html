@@ -329,10 +329,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>From applying the queries above to all tables, I made this summary of the Ids that were shared between datasets to understand how big the sample was, and how I could join the datasets.</p>
 <table class="table">
 <colgroup>
-<col style="width: 21%">
-<col style="width: 12%">
-<col style="width: 33%">
-<col style="width: 32%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 29%">
+<col style="width: 29%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -577,7 +577,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/margar1tava\.quarto\.pub\/portfolio");
+      var filterRegex = new RegExp("https:\/\/margar1tava\.quarto\.pub\/portfolio\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

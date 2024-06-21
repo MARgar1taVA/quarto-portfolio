@@ -22,11 +22,36 @@ $gray-900: #212529 !default;
 $black: #000 !default;
 
 // The page text color
+
+
 $link-color: $pink-1;
 $body-color: $gray-700;
 $body-secondary: $green-1;
 $code-block-bg: $lavander-1;
 $callout-color: $blueish-1;
+
+code {
+  font-family: monospace;    /* Use a monospaced font */
+}
+
+/* Specific language syntax highlighting (R) */
+
+pre code.language-r {       /* R code */
+  .operator {                /* R operators */
+    color: #FF0000;         /* Red */
+  }
+  
+  .keyword {                /* R keywords */
+    color: #5B3B52;
+  }
+  
+  .string {                 /* R strings */
+    color: #547B7D;
+  }
+
+  // ... Add more rules for other R elements
+}
+
 
 /*-- scss:rules --*/
 

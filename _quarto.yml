@@ -24,12 +24,11 @@ website:
         href: https://public.tableau.com/app/profile/margarita.vald.s.alem.n/vizzes
       - icon: envelope-fill
         href: mailto:valdes.aleman.margarita@gmail.com 
- 
+
+highlight-style: ayu
 theme: 
   - cosmo
   - styles.scss
-
-highlight-style: tango
 
 editor: visual
 

@@ -1,0 +1,44 @@
+/* General code block styling */
+pre {
+  background-color: #f5f5f5; /* Light gray background */
+  border-radius: 5px;       /* Rounded corners */
+  padding: 15px;           /* Add some padding */
+}
+
+code {
+  font-family: monospace;    /* Use a monospaced font */
+}
+
+/* Specific language syntax highlighting (R) */
+pre code.language-r {       /* R code */
+  .operator {                /* R operators */
+    color: #FF0000;         /* Red */
+  }
+  
+  .keyword {                /* R keywords */
+    color: blue;
+  }
+  
+  .string {                 /* R strings */
+    color: green;
+  }
+
+  // ... Add more rules for other R elements
+}
+
+/* Specific language syntax highlighting (Python) */
+pre code.language-python {  /* Python code */
+  .operator {                /* Python operators */
+    color: orange;
+  }
+  
+  .keyword {                /* Python keywords */
+    color: blue;
+  }
+  
+  .string {                 /* Python strings */
+    color: green;
+  }
+
+  // ... Add more rules for other Python elements
+}

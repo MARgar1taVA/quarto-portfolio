@@ -1,0 +1,22 @@
+---
+title: "Reports of UFO Sightings"
+author: "Margarita Valdés A."
+date: "2024-07-16"
+description: "This analysis shows the reported UFO sightings according to the NUFORC"
+categories: [Data Wrangling, Google Sheets, Data Visualization, Looker Studio]
+title-block-banner: "#40425f" 
+title-block-banner-color: "#f3dee9"
+image: "UFOdashboard.png"
+format:
+  html:
+    toc: true
+    df-print: paged
+draft: true
+---
+
+# Dashboard
+
+```{=html}
+<iframe width="100%" height="400" src="https://lookerstudio.google.com/embed/reporting/226e6427-69f1-46e8-9307-4e4f7b3cbf87/page/6E15D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+```
+# Data origin

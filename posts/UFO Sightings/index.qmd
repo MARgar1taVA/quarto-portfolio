@@ -2,7 +2,7 @@
 title: "Reports of UFO Sightings"
 author: "Margarita Valdés A."
 date: "2024-07-16"
-description: "This analysis shows the reported UFO sightings according to the NUFORC"
+description: "This analysis shows the reported cases of UFO sightings to NUFORC"
 categories: [Data Wrangling, Google Sheets, Data Visualization, Looker Studio]
 title-block-banner: "#40425f" 
 title-block-banner-color: "#f3dee9"
@@ -11,12 +11,27 @@ format:
   html:
     toc: true
     df-print: paged
-draft: true
+draft: false
 ---
 
-# Dashboard
+# Reports of UFO Sightings 
+
+This analysis consists of a dashboard done in [Google Looker Studio](https://lookerstudio.google.com/u/0/navigation/reporting) with a little bit of data wrangling using [Google Sheets](https://workspace.google.com/products/sheets/). The dashboard displays data about reports of undefined flying objects (UFOs) sightings, compiled by [The National UFO Reporting Center (NUFOC)](https://nuforc.org).
+
+## About the Data
+
+The data set of [UFO sightings](https://www.kaggle.com/datasets/NUFORC/ufo-sightings) was obtain from Anna Wolak's Kaggle page. The data set I used is the scrubbed data, which is the NUFORC data that was geolocated, and time standardized by [Sigmond Axel](https://github.com/planetsig/ufo-reports). This data set contains over 80,000 reports of UFO sightings over the last century, **from 1910 to 2013**. Newer reports from the last years can be found in the [NUFOC database](https://nuforc.org/databank/), but the data cannot be downloaded. However, a summary about each of the sightings is available, so if you are interested in any of them I recommend visiting their page.
+
+## Data Wrangling
+
+I uploaded the [scrubbed.csv](https://docs.google.com/spreadsheets/d/1wT9goH0mxYgAWGaR-CgZ-XfOPtPoUGYmRSFUW098cXM/edit?usp=sharing) data data set to Google Sheets and did a little bit of data wrangling to change the column of country in order to spell the full names of the countries (using the IFS() function) needed to be displayed in further figures or tables. In Looker Studio I connected de Google sheet with the data and realized I needed the geo data with the coordinates to be in a single column so I added a calculated field with both coordinates separated by a comma ("latitude, longitude" using the function CONCAT()).
+
+## Data Visualization
+
+The bellow dashboard displays information about how many sightings have been reported, the main countries where reports come from, the top shapes of UFOs reported, and a map of the locations where they were observed. You can also see a time line of when the sightings occurred. The dashboard can be filter by country, shape or date range. To have a better look of the dashboard you can open it in the following link: [Reports of UFO Sightings](https://lookerstudio.google.com/reporting/226e6427-69f1-46e8-9307-4e4f7b3cbf87).
 
 ```{=html}
-<iframe width="100%" height="400" src="https://lookerstudio.google.com/embed/reporting/226e6427-69f1-46e8-9307-4e4f7b3cbf87/page/6E15D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+<iframe width="100%" height="650" src="https://lookerstudio.google.com/embed/reporting/226e6427-69f1-46e8-9307-4e4f7b3cbf87/page/6E15D" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
 ```
-# Data origin
+
+

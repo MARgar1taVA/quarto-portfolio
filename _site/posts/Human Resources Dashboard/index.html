@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Margarita Valdés A.">
+<meta name="dcterms.date" content="2024-08-05">
+<meta name="description" content="This porject is a complex dashboard in Tablau using mock data to mimic">
+
+<title>Margarita Valdés A., PhD - Human Resources Dashboard | Tableau</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../profile.jpg" rel="icon" type="image/jpeg">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: #119da4;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: #119da4;
+background: #464146;
+      }
+</style>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Margarita Valdés A., PhD</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Portfolio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resume.html"> 
+<span class="menu-text">Resume</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/MARgar1taVA"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/m-valdes-aleman/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://public.tableau.com/app/profile/margarita.vald.s.alem.n/vizzes"> <i class="bi bi-clipboard-data-fill" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:valdes.aleman.margarita@gmail.com"> <i class="bi bi-envelope-fill" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-left">
+      <h1 class="title">Human Resources Dashboard | Tableau</h1>
+                  <div>
+        <div class="description">
+          This porject is a complex dashboard in Tablau using mock data to mimic
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Data Visualization</div>
+                <div class="quarto-category">Tableau</div>
+                <div class="quarto-category">Python</div>
+                <div class="quarto-category">ChatGPT</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-left">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Margarita Valdés A. </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 5, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#human-resources-dashboard" id="toc-human-resources-dashboard" class="nav-link active" data-scroll-target="#human-resources-dashboard">Human Resources Dashboard</a>
+  <ul class="collapse">
+  <li><a href="#about-the-data" id="toc-about-the-data" class="nav-link" data-scroll-target="#about-the-data">About the Data</a>
+  <ul class="collapse">
+  <li><a href="#python-script" id="toc-python-script" class="nav-link" data-scroll-target="#python-script">Python Script</a></li>
+  </ul></li>
+  <li><a href="#dashboard" id="toc-dashboard" class="nav-link" data-scroll-target="#dashboard">Dashboard</a>
+  <ul class="collapse">
+  <li><a href="#summary-view" id="toc-summary-view" class="nav-link" data-scroll-target="#summary-view">1. Summary View</a></li>
+  <li><a href="#employee-records-view" id="toc-employee-records-view" class="nav-link" data-scroll-target="#employee-records-view">2. Employee Records View</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+
+
+
+
+
+<section id="human-resources-dashboard" class="level1">
+<h1>Human Resources Dashboard</h1>
+<p>This <a href="https://www.datawithbaraa.com/tableau/tableau-hr-project-thank-you/">project</a> consists of elaborating a highly interactive Tableau dashboard using mock data that mimics a Human Resources department type of data. The created dashboard is designed to follow specific requirements that could be asked by an HR department (described bellow), to achieve both a summary and a detailed view of the data. The <a href="https://public.tableau.com/views/HR_dashboard_17225594451910/HRSummary?%3Aembed=y&amp;%3AshowVizHome=no&amp;%3Ahost_url=https%3A%2F%2Fpublic.tableau.com%2F&amp;%3Aembed_code_version=3&amp;%3Atabs=no&amp;%3Atoolbar=yes&amp;%3Aanimate_transition=yes&amp;%3Adisplay_static_image=no&amp;%3Adisplay_spinner=no&amp;%3Adisplay_overlay=yes&amp;%3Adisplay_count=yes&amp;%3Alanguage=en-US&amp;%3AloadOrderID=0&amp;%3Aincrement_view_count=no#1">dashboard</a> is highly interactive, with filters and elaborated tooltips to obtain more information when hovering over each chart.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="HR_dashboard_1.png" class="img-fluid figure-img"></p>
+<figcaption>Summary View</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="HR_dashboard_2.png" class="img-fluid figure-img"></p>
+<figcaption>Detailed View</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<section id="about-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="about-the-data">About the Data</h2>
+<p>The dataset consists of 8950 records that simulates a set of employee information typically found in HR systems, including: demographics, job details, salary, performance evaluations, and attrition data. The dataset was generated by prompting Chat-GPT for a python script, using the <strong>Faker</strong> library, with the following attributes:</p>
+<ol type="1">
+<li>Employee ID: A unique identifier.</li>
+<li>First Name: Randomly generated.</li>
+<li>Last Name: Randomly generated.</li>
+<li>Gender: Randomly chosen with a 46% probability for ‘Female’ and a 54% probability for ‘Male’.</li>
+<li>State and City: Randomly assigned from a predefined list of states and their cities.</li>
+<li>Hire Date: Randomly generated with custom probabilities for each year from 2015 to 2024.</li>
+<li>Department: Randomly chosen from a list of departments with specified probabilities.</li>
+<li>Job Title: Randomly selected based on the department, with specific probabilities for each job title within the department.</li>
+<li>Education Level: Determined based on the job title, chosen from a predefined mapping of job titles to education levels.</li>
+<li>Performance Rating: Randomly selected from ‘Excellent’, ‘Good’, ‘Satisfactory’, ‘Needs Improvement’ with specified probabilities.</li>
+<li>Overtime: Randomly chosen with a 30% probability for ‘Yes’ and a 70% probability for ‘No’.</li>
+<li>Salary: Generated based on the department and job title, within specific ranges.</li>
+<li>Birth Date: Generated based on age group distribution and job title requirements, ensuring consistency with the hire date.</li>
+<li>Termination Date: Assigned to a subset of employees (11.2% of the total) with specific probabilities for each year from 2015 to 2024, ensuring the termination date is at least 6 months after the hire date.</li>
+<li>Adjusted Salary: Calculated based on gender, education level, and age, applying specific multipliers and increments.</li>
+</ol>
+<section id="python-script" class="level3">
+<h3 class="anchored" data-anchor-id="python-script">Python Script</h3>
+<p>The used python script is the following:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> faker <span class="im">import</span> Faker</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime, timedelta</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize Faker</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>fake <span class="op">=</span> Faker(<span class="st">'en_US'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Faker.seed(<span class="dv">42</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>random.seed(<span class="dv">42</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Configuration</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>num_records <span class="op">=</span> <span class="dv">8950</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># States &amp; Cities</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>states_cities <span class="op">=</span> {</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">'New York'</span>: [<span class="st">'New York City'</span>, <span class="st">'Buffalo'</span>, <span class="st">'Rochester'</span>],</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Virginia'</span>: [<span class="st">'Virginia Beach'</span>, <span class="st">'Norfolk'</span>, <span class="st">'Richmond'</span>],</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Florida'</span>: [<span class="st">'Miami'</span>, <span class="st">'Orlando'</span>, <span class="st">'Tampa'</span>],</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Illinois'</span>: [<span class="st">'Chicago'</span>, <span class="st">'Aurora'</span>, <span class="st">'Naperville'</span>],</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Pennsylvania'</span>: [<span class="st">'Philadelphia'</span>, <span class="st">'Pittsburgh'</span>, <span class="st">'Allentown'</span>],</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Ohio'</span>: [<span class="st">'Columbus'</span>, <span class="st">'Cleveland'</span>, <span class="st">'Cincinnati'</span>],</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">'North Carolina'</span>: [<span class="st">'Charlotte'</span>, <span class="st">'Raleigh'</span>, <span class="st">'Greensboro'</span>],</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Michigan'</span>: [<span class="st">'Detroit'</span>, <span class="st">'Grand Rapids'</span>, <span class="st">'Warren'</span>]</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>states <span class="op">=</span> <span class="bu">list</span>(states_cities.keys())</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>state_prob <span class="op">=</span> [<span class="fl">0.7</span>, <span class="fl">0.02</span>, <span class="fl">0.01</span>, <span class="fl">0.03</span>, <span class="fl">0.05</span>, <span class="fl">0.03</span>, <span class="fl">0.05</span>, <span class="fl">0.11</span>]</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>assigned_states <span class="op">=</span> np.random.choice(states, size<span class="op">=</span>num_records, p<span class="op">=</span>state_prob)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>assigned_cities <span class="op">=</span> [np.random.choice(states_cities[state]) <span class="cf">for</span> state <span class="kw">in</span> assigned_states]</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Departments &amp; Jobtitles</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>departments <span class="op">=</span> [<span class="st">'HR'</span>, <span class="st">'IT'</span>, <span class="st">'Sales'</span>, <span class="st">'Marketing'</span>, <span class="st">'Finance'</span>, <span class="st">'Operations'</span>, <span class="st">'Customer Service'</span>]</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>departments_prob <span class="op">=</span> [<span class="fl">0.02</span>, <span class="fl">0.15</span>, <span class="fl">0.21</span>, <span class="fl">0.08</span>, <span class="fl">0.05</span>, <span class="fl">0.30</span>, <span class="fl">0.19</span>]</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>jobtitles <span class="op">=</span> {</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="st">'HR'</span>: [<span class="st">'HR Manager'</span>, <span class="st">'HR Coordinator'</span>, <span class="st">'Recruiter'</span>, <span class="st">'HR Assistant'</span>],</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="st">'IT'</span>: [<span class="st">'IT Manager'</span>, <span class="st">'Software Developer'</span>, <span class="st">'System Administrator'</span>, <span class="st">'IT Support Specialist'</span>],</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Sales'</span>: [<span class="st">'Sales Manager'</span>, <span class="st">'Sales Consultant'</span>, <span class="st">'Sales Specialist'</span>, <span class="st">'Sales Representative'</span>],</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Marketing'</span>: [<span class="st">'Marketing Manager'</span>, <span class="st">'SEO Specialist'</span>, <span class="st">'Content Creator'</span>, <span class="st">'Marketing Coordinator'</span>],</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Finance'</span>: [<span class="st">'Finance Manager'</span>, <span class="st">'Accountant'</span>, <span class="st">'Financial Analyst'</span>, <span class="st">'Accounts Payable Specialist'</span>],</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Operations'</span>: [<span class="st">'Operations Manager'</span>, <span class="st">'Operations Analyst'</span>, <span class="st">'Logistics Coordinator'</span>, <span class="st">'Inventory Specialist'</span>],</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Customer Service'</span>: [<span class="st">'Customer Service Manager'</span>, <span class="st">'Customer Service Representative'</span>, <span class="st">'Support Specialist'</span>, <span class="st">'Help Desk Technician'</span>]</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>jobtitles_prob <span class="op">=</span> {</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="st">'HR'</span>: [<span class="fl">0.03</span>, <span class="fl">0.3</span>, <span class="fl">0.47</span>, <span class="fl">0.2</span>],  <span class="co"># HR Manager, HR Coordinator, Recruiter, HR Assistant</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="st">'IT'</span>: [<span class="fl">0.02</span>, <span class="fl">0.47</span>, <span class="fl">0.2</span>, <span class="fl">0.31</span>],  <span class="co"># IT Manager, Software Developer, System Administrator, IT Support Specialist</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Sales'</span>: [<span class="fl">0.03</span>, <span class="fl">0.25</span>, <span class="fl">0.32</span>, <span class="fl">0.4</span>],  <span class="co"># Sales Manager, Sales Consultant, Sales Specialist, Sales Representative</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Marketing'</span>: [<span class="fl">0.04</span>, <span class="fl">0.25</span>, <span class="fl">0.41</span>, <span class="fl">0.3</span>],  <span class="co"># Marketing Manager, SEO Specialist, Content Creator, Marketing Coordinator</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Finance'</span>: [<span class="fl">0.03</span>, <span class="fl">0.37</span>, <span class="fl">0.4</span>, <span class="fl">0.2</span>],  <span class="co"># Finance Manager, Accountant, Financial Analyst, Accounts Payable Specialist</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Operations'</span>: [<span class="fl">0.02</span>, <span class="fl">0.2</span>, <span class="fl">0.4</span>, <span class="fl">0.38</span>],  <span class="co"># Operations Manager, Operations Analyst, Logistics Coordinator, Inventory Specialist</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Customer Service'</span>: [<span class="fl">0.04</span>, <span class="fl">0.3</span>, <span class="fl">0.38</span>, <span class="fl">0.28</span>]  <span class="co"># Customer Service Manager, Customer Service Representative, Support Specialist, Help Desk Technician</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="co"># Educations</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>educations <span class="op">=</span> [<span class="st">'High School'</span>, <span class="st">"Bachelor"</span>, <span class="st">"Master"</span>, <span class="st">'PhD'</span>]</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>education_mapping <span class="op">=</span> {</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    <span class="st">'HR Manager'</span>: [<span class="st">"Master"</span>, <span class="st">"PhD"</span>],</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    <span class="st">'HR Coordinator'</span>: [<span class="st">"Bachelor"</span>, <span class="st">"Master"</span>],</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Recruiter'</span>: [<span class="st">"High School"</span>, <span class="st">"Bachelor"</span>],</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    <span class="st">'HR Assistant'</span>: [<span class="st">"High School"</span>, <span class="st">"Bachelor"</span>],</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    <span class="st">'IT Manager'</span>: [<span class="st">"PhD"</span>, <span class="st">"Master"</span>],</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Software Developer'</span>: [<span class="st">"Bachelor"</span>, <span class="st">"Master"</span>],</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    <span class="st">'System Administrator'</span>: [<span class="st">"Bachelor"</span>, <span class="st">"Master"</span>],</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>    <span class="st">'IT Support Specialist'</span>: [<span class="st">"High School"</span>, <span class="st">"Bachelor"</span>],</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Sales Manager'</span>: [<span class="st">"Master"</span>,<span class="st">"PhD"</span>],</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Sales Consultant'</span>: [<span class="st">"Bachelor"</span>, <span class="st">"Master"</span>, <span class="st">"PhD"</span>],</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Sales Specialist'</span>: [<span class="st">"Bachelor"</span>, <span class="st">"Master"</span>, <span class="st">"PhD"</span>],</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Sales Representative'</span>: [<span class="st">"Bachelor"</span>],</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Marketing Manager'</span>: [<span class="st">"Bachelor"</span>, <span class="st">"Master"</span>,<span class="st">"PhD"</span>],</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    <span class="st">'SEO Specialist'</span>: [<span class="st">"High School"</span>, <span class="st">"Bachelor"</span>],</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Content Creator'</span>: [<span class="st">"High School"</span>, <span class="st">"Bachelor"</span>],</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Marketing Coordinator'</span>: [<span class="st">"Bachelor"</span>],</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Finance Manager'</span>: [<span class="st">"Master"</span>, <span class="st">"PhD"</span>],</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Accountant'</span>: [<span class="st">"Bachelor"</span>],</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Financial Analyst'</span>: [<span class="st">"Bachelor"</span>, <span class="st">"Master"</span>, <span class="st">"PhD"</span>],</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Accounts Payable Specialist'</span>: [<span class="st">"Bachelor"</span>],</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Operations Manager'</span>: [<span class="st">"Bachelor"</span>, <span class="st">"Master"</span>],</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Operations Analyst'</span>: [<span class="st">"Bachelor"</span>, <span class="st">"Master"</span>],</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Logistics Coordinator'</span>: [<span class="st">"Bachelor"</span>],</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Inventory Specialist'</span>: [<span class="st">"High School"</span>, <span class="st">"Bachelor"</span>],</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Customer Service Manager'</span>: [<span class="st">"Bachelor"</span>, <span class="st">"Master"</span>, <span class="st">"PhD"</span>],</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Customer Service Representative'</span>: [<span class="st">"High School"</span>, <span class="st">"Bachelor"</span>],</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Support Specialist'</span>: [<span class="st">"High School"</span>, <span class="st">"Bachelor"</span>],</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Customer Success Manager'</span>: [<span class="st">"Bachelor"</span>, <span class="st">"Master"</span>, <span class="st">"PhD"</span>],</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>    <span class="st">'Help Desk Technician'</span>: [<span class="st">"High School"</span>, <span class="st">"Bachelor"</span>]</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="co"># Hiring Date</span></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="co"># Define custom probability weights for each year</span></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>year_weights <span class="op">=</span> {</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2015</span>: <span class="dv">5</span>,   <span class="co"># 15% probability</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2016</span>: <span class="dv">8</span>,   <span class="co"># 15% probability</span></span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2017</span>: <span class="dv">17</span>,   <span class="co"># 20% probability</span></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2018</span>: <span class="dv">9</span>,  <span class="co"># 15% probability</span></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2019</span>: <span class="dv">10</span>,  <span class="co"># 10% probability</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2020</span>: <span class="dv">11</span>,  <span class="co"># 10% probability</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2021</span>: <span class="dv">5</span>,  <span class="co"># 8% probability</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2022</span>: <span class="dv">12</span>,  <span class="co"># 5% probability</span></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2023</span>: <span class="dv">14</span>,  <span class="co"># 2% probability</span></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2024</span>: <span class="dv">9</span>   <span class="co"># 2% probability</span></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate a random date based on custom probabilities</span></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_custom_date(year_weights):</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>    year <span class="op">=</span> random.choices(<span class="bu">list</span>(year_weights.keys()), weights<span class="op">=</span><span class="bu">list</span>(year_weights.values()))[<span class="dv">0</span>]</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>    month <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">12</span>)</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>    day <span class="op">=</span> random.randint(<span class="dv">1</span>, <span class="dv">28</span>)  <span class="co"># Assuming all months have 28 days for simplicity</span></span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> fake.date_time_between(start_date<span class="op">=</span>datetime(year, <span class="dv">1</span>, <span class="dv">1</span>), end_date<span class="op">=</span>datetime(year, <span class="dv">12</span>, <span class="dv">31</span>))</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_salary(department, job_title):</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>    salary_dict <span class="op">=</span> {</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>            <span class="st">'HR'</span>: {</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>                <span class="st">'HR Manager'</span>: np.random.randint(<span class="dv">60000</span>, <span class="dv">90000</span>),</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>                <span class="st">'HR Coordinator'</span>: np.random.randint(<span class="dv">50000</span>, <span class="dv">60000</span>),</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Recruiter'</span>: np.random.randint(<span class="dv">50000</span>, <span class="dv">70000</span>),</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>                <span class="st">'HR Assistant'</span>: np.random.randint(<span class="dv">50000</span>, <span class="dv">60000</span>)</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>            },</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>            <span class="st">'IT'</span>: {</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>                <span class="st">'IT Manager'</span>: np.random.randint(<span class="dv">80000</span>, <span class="dv">120000</span>),</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Software Developer'</span>: np.random.randint(<span class="dv">70000</span>, <span class="dv">95000</span>),</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>                <span class="st">'System Administrator'</span>: np.random.randint(<span class="dv">60000</span>, <span class="dv">90000</span>),</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>                <span class="st">'IT Support Specialist'</span>: np.random.randint(<span class="dv">50000</span>, <span class="dv">60000</span>)</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>            },</span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>            <span class="st">'Sales'</span>: {</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Sales Manager'</span>: np.random.randint(<span class="dv">70000</span>, <span class="dv">110000</span>),</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Sales Consultant'</span>: np.random.randint(<span class="dv">60000</span>, <span class="dv">90000</span>),</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Sales Specialist'</span>: np.random.randint(<span class="dv">50000</span>, <span class="dv">80000</span>),</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Sales Representative'</span>: np.random.randint(<span class="dv">50000</span>, <span class="dv">70000</span>)</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>            },</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>            <span class="st">'Marketing'</span>: {</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Marketing Manager'</span>: np.random.randint(<span class="dv">70000</span>, <span class="dv">100000</span>),</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>                <span class="st">'SEO Specialist'</span>: np.random.randint(<span class="dv">50000</span>, <span class="dv">80000</span>),</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Content Creator'</span>: np.random.randint(<span class="dv">50000</span>, <span class="dv">60000</span>),</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Marketing Coordinator'</span>: np.random.randint(<span class="dv">50000</span>, <span class="dv">70000</span>)</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>            },</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>            <span class="st">'Finance'</span>: {</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Finance Manager'</span>: np.random.randint(<span class="dv">80000</span>, <span class="dv">120000</span>),</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Accountant'</span>: np.random.randint(<span class="dv">50000</span>, <span class="dv">80000</span>),</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Financial Analyst'</span>: np.random.randint(<span class="dv">60000</span>, <span class="dv">90000</span>),</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Accounts Payable Specialist'</span>: np.random.randint(<span class="dv">50000</span>, <span class="dv">60000</span>)</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>            },</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>            <span class="st">'Operations'</span>: {</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Operations Manager'</span>: np.random.randint(<span class="dv">70000</span>, <span class="dv">100000</span>),</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Operations Analyst'</span>: np.random.randint(<span class="dv">50000</span>, <span class="dv">80000</span>),</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Logistics Coordinator'</span>: np.random.randint(<span class="dv">50000</span>, <span class="dv">60000</span>),</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Inventory Specialist'</span>: np.random.randint(<span class="dv">50000</span>, <span class="dv">60000</span>)</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>            },</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>            <span class="st">'Customer Service'</span>: {</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Customer Service Manager'</span>: np.random.randint(<span class="dv">60000</span>, <span class="dv">90000</span>),</span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Customer Service Representative'</span>: np.random.randint(<span class="dv">50000</span>, <span class="dv">60000</span>),</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Support Specialist'</span>: np.random.randint(<span class="dv">50000</span>, <span class="dv">60000</span>),</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>                <span class="st">'Help Desk Technician'</span>: np.random.randint(<span class="dv">50000</span>, <span class="dv">80000</span>)</span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>            }</span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> salary_dict[department][job_title]</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate the dataset</span></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> []</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(num_records):</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>    employee_id <span class="op">=</span> <span class="ss">f"00-</span><span class="sc">{</span>random<span class="sc">.</span>randint(<span class="dv">10000000</span>, <span class="dv">99999999</span>)<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>    first_name <span class="op">=</span> fake.first_name()</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>    last_name <span class="op">=</span> fake.last_name()</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>    gender <span class="op">=</span> np.random.choice([<span class="st">'Female'</span>, <span class="st">'Male'</span>], p<span class="op">=</span>[<span class="fl">0.46</span>, <span class="fl">0.54</span>])</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>    state <span class="op">=</span> np.random.choice(states, p<span class="op">=</span>state_prob)</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a>    city <span class="op">=</span> np.random.choice(states_cities[state])</span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>    hiredate <span class="op">=</span> generate_custom_date(year_weights)</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>      <span class="co">#termdate</span></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a>    department <span class="op">=</span> np.random.choice(departments, p<span class="op">=</span>departments_prob)</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>    job_title  <span class="op">=</span> np.random.choice(jobtitles[department], p<span class="op">=</span>jobtitles_prob[department])</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>    education_level <span class="op">=</span> np.random.choice(education_mapping[job_title])</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>    performance_rating <span class="op">=</span> np.random.choice([<span class="st">'Excellent'</span>, <span class="st">'Good'</span>, <span class="st">'Satisfactory'</span>, <span class="st">'Needs Improvement'</span>], p<span class="op">=</span>[<span class="fl">0.12</span>, <span class="fl">0.5</span>, <span class="fl">0.3</span>, <span class="fl">0.08</span>])</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>    overtime <span class="op">=</span> np.random.choice([<span class="st">'Yes'</span>, <span class="st">'No'</span>], p<span class="op">=</span>[<span class="fl">0.3</span>, <span class="fl">0.7</span>])</span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>    salary <span class="op">=</span> generate_salary(department, job_title)</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>    data.append([</span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>        employee_id,</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>        first_name,</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>        last_name,</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>        gender,</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>        state,</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>        city,</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>        hiredate,</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>        department,</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>        job_title,</span>
+<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>        education_level,</span>
+<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>        salary,</span>
+<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a>        performance_rating,</span>
+<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>        overtime</span>
+<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>    ])</span>
+<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a><span class="co">## Create DataFrame</span></span>
+<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a>columns <span class="op">=</span> [</span>
+<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>     <span class="st">'employee_id'</span>,</span>
+<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>     <span class="st">'first_name'</span>,</span>
+<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a>     <span class="st">'last_name'</span>,</span>
+<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>     <span class="st">'gender'</span>,</span>
+<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a>     <span class="st">'state'</span>,</span>
+<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>     <span class="st">'city'</span>,</span>
+<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>     <span class="st">'hiredate'</span>,</span>
+<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a>     <span class="st">'department'</span>,</span>
+<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>     <span class="st">'job_title'</span>,</span>
+<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a>     <span class="st">'education_level'</span>,</span>
+<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>     <span class="st">'salary'</span>,</span>
+<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>     <span class="st">'performance_rating'</span>,</span>
+<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a>     <span class="st">'overtime'</span></span>
+<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data, columns<span class="op">=</span>columns)</span>
+<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a><span class="co"># Add Birthdate</span></span>
+<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> generate_birthdate(row):</span>
+<span id="cb1-216"><a href="#cb1-216" aria-hidden="true" tabindex="-1"></a>    age_distribution <span class="op">=</span> {</span>
+<span id="cb1-217"><a href="#cb1-217" aria-hidden="true" tabindex="-1"></a>        <span class="st">'under_25'</span>: <span class="fl">0.11</span>,</span>
+<span id="cb1-218"><a href="#cb1-218" aria-hidden="true" tabindex="-1"></a>        <span class="st">'25_34'</span>: <span class="fl">0.25</span>,</span>
+<span id="cb1-219"><a href="#cb1-219" aria-hidden="true" tabindex="-1"></a>        <span class="st">'35_44'</span>: <span class="fl">0.31</span>,</span>
+<span id="cb1-220"><a href="#cb1-220" aria-hidden="true" tabindex="-1"></a>        <span class="st">'45_54'</span>: <span class="fl">0.24</span>,</span>
+<span id="cb1-221"><a href="#cb1-221" aria-hidden="true" tabindex="-1"></a>        <span class="st">'over_55'</span>: <span class="fl">0.09</span></span>
+<span id="cb1-222"><a href="#cb1-222" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-223"><a href="#cb1-223" aria-hidden="true" tabindex="-1"></a>    age_groups <span class="op">=</span> <span class="bu">list</span>(age_distribution.keys())</span>
+<span id="cb1-224"><a href="#cb1-224" aria-hidden="true" tabindex="-1"></a>    age_probs <span class="op">=</span> <span class="bu">list</span>(age_distribution.values())</span>
+<span id="cb1-225"><a href="#cb1-225" aria-hidden="true" tabindex="-1"></a>    age_group <span class="op">=</span> np.random.choice(age_groups, p<span class="op">=</span>age_probs)</span>
+<span id="cb1-226"><a href="#cb1-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-227"><a href="#cb1-227" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">any</span>(<span class="st">'Manager'</span> <span class="kw">in</span> title <span class="cf">for</span> title <span class="kw">in</span> row[<span class="st">'job_title'</span>]):</span>
+<span id="cb1-228"><a href="#cb1-228" aria-hidden="true" tabindex="-1"></a>        age <span class="op">=</span> np.random.randint(<span class="dv">30</span>, <span class="dv">65</span>)</span>
+<span id="cb1-229"><a href="#cb1-229" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> row[<span class="st">'education_level'</span>] <span class="op">==</span> <span class="st">'PhD'</span>:</span>
+<span id="cb1-230"><a href="#cb1-230" aria-hidden="true" tabindex="-1"></a>        age <span class="op">=</span> np.random.randint(<span class="dv">27</span>, <span class="dv">65</span>)</span>
+<span id="cb1-231"><a href="#cb1-231" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> age_group <span class="op">==</span> <span class="st">'under_25'</span>:</span>
+<span id="cb1-232"><a href="#cb1-232" aria-hidden="true" tabindex="-1"></a>         age <span class="op">=</span> np.random.randint(<span class="dv">20</span>, <span class="dv">25</span>)</span>
+<span id="cb1-233"><a href="#cb1-233" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> age_group <span class="op">==</span> <span class="st">'25_34'</span>:</span>
+<span id="cb1-234"><a href="#cb1-234" aria-hidden="true" tabindex="-1"></a>        age <span class="op">=</span> np.random.randint(<span class="dv">25</span>, <span class="dv">35</span>)</span>
+<span id="cb1-235"><a href="#cb1-235" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> age_group <span class="op">==</span> <span class="st">'35_44'</span>:</span>
+<span id="cb1-236"><a href="#cb1-236" aria-hidden="true" tabindex="-1"></a>        age <span class="op">=</span> np.random.randint(<span class="dv">35</span>, <span class="dv">45</span>)</span>
+<span id="cb1-237"><a href="#cb1-237" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> age_group <span class="op">==</span> <span class="st">'45_54'</span>:</span>
+<span id="cb1-238"><a href="#cb1-238" aria-hidden="true" tabindex="-1"></a>        age <span class="op">=</span> np.random.randint(<span class="dv">45</span>, <span class="dv">55</span>)</span>
+<span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>        age <span class="op">=</span> np.random.randint(<span class="dv">56</span>, <span class="dv">65</span>)</span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    birthdate <span class="op">=</span> fake.date_of_birth(minimum_age<span class="op">=</span>age, maximum_age<span class="op">=</span>age)</span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> birthdate</span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the function to generate birthdates</span></span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'birthdate'</span>] <span class="op">=</span> df.<span class="bu">apply</span>(generate_birthdate, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a><span class="co"># Terminations</span></span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a><span class="co"># Define termination distribution</span></span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>year_weights <span class="op">=</span> {</span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2015</span>: <span class="dv">5</span>,</span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2016</span>: <span class="dv">7</span>,</span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2017</span>: <span class="dv">10</span>,</span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2018</span>: <span class="dv">12</span>,</span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2019</span>: <span class="dv">9</span>,</span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2020</span>: <span class="dv">10</span>,</span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2021</span>: <span class="dv">20</span>,</span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2022</span>: <span class="dv">10</span>,</span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2023</span>: <span class="dv">7</span>,</span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>    <span class="dv">2024</span>: <span class="dv">10</span></span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the total number of terminated employees</span></span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>total_employees <span class="op">=</span> num_records</span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a>termination_percentage <span class="op">=</span> <span class="fl">0.112</span>  <span class="co"># 11.2%</span></span>
+<span id="cb1-266"><a href="#cb1-266" aria-hidden="true" tabindex="-1"></a>total_terminated <span class="op">=</span> <span class="bu">int</span>(total_employees <span class="op">*</span> termination_percentage)</span>
+<span id="cb1-267"><a href="#cb1-267" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-268"><a href="#cb1-268" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate termination dates based on distribution</span></span>
+<span id="cb1-269"><a href="#cb1-269" aria-hidden="true" tabindex="-1"></a>termination_dates <span class="op">=</span> []</span>
+<span id="cb1-270"><a href="#cb1-270" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> year, weight <span class="kw">in</span> year_weights.items():</span>
+<span id="cb1-271"><a href="#cb1-271" aria-hidden="true" tabindex="-1"></a>    num_terminations <span class="op">=</span> <span class="bu">int</span>(total_terminated <span class="op">*</span> (weight <span class="op">/</span> <span class="dv">100</span>))</span>
+<span id="cb1-272"><a href="#cb1-272" aria-hidden="true" tabindex="-1"></a>    termination_dates.extend([year] <span class="op">*</span> num_terminations)</span>
+<span id="cb1-273"><a href="#cb1-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-274"><a href="#cb1-274" aria-hidden="true" tabindex="-1"></a><span class="co"># Randomly shuffle the termination dates</span></span>
+<span id="cb1-275"><a href="#cb1-275" aria-hidden="true" tabindex="-1"></a>random.shuffle(termination_dates)</span>
+<span id="cb1-276"><a href="#cb1-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-277"><a href="#cb1-277" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign termination dates to terminated employees</span></span>
+<span id="cb1-278"><a href="#cb1-278" aria-hidden="true" tabindex="-1"></a>terminated_indices <span class="op">=</span> df.index[:total_terminated]</span>
+<span id="cb1-279"><a href="#cb1-279" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, year <span class="kw">in</span> <span class="bu">enumerate</span>(termination_dates[:total_terminated]):</span>
+<span id="cb1-280"><a href="#cb1-280" aria-hidden="true" tabindex="-1"></a>    df.at[terminated_indices[i], <span class="st">'termdate'</span>] <span class="op">=</span> datetime(year, <span class="dv">1</span>, <span class="dv">1</span>) <span class="op">+</span> timedelta(days<span class="op">=</span>random.randint(<span class="dv">0</span>, <span class="dv">365</span>))</span>
+<span id="cb1-281"><a href="#cb1-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-282"><a href="#cb1-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-283"><a href="#cb1-283" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign None to termdate for employees who are not terminated</span></span>
+<span id="cb1-284"><a href="#cb1-284" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'termdate'</span>] <span class="op">=</span> df[<span class="st">'termdate'</span>].where(df[<span class="st">'termdate'</span>].notnull(), <span class="va">None</span>)</span>
+<span id="cb1-285"><a href="#cb1-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-286"><a href="#cb1-286" aria-hidden="true" tabindex="-1"></a><span class="co"># Ensure termdate is at least 6 months after hiredat</span></span>
+<span id="cb1-287"><a href="#cb1-287" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'termdate'</span>] <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> row: row[<span class="st">'hiredate'</span>] <span class="op">+</span> timedelta(days<span class="op">=</span><span class="dv">180</span>) <span class="cf">if</span> row[<span class="st">'termdate'</span>] <span class="kw">and</span> row[<span class="st">'termdate'</span>] <span class="op">&lt;</span> row[<span class="st">'hiredate'</span>] <span class="op">+</span> timedelta(days<span class="op">=</span><span class="dv">180</span>) <span class="cf">else</span> row[<span class="st">'termdate'</span>], axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-288"><a href="#cb1-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-289"><a href="#cb1-289" aria-hidden="true" tabindex="-1"></a>education_multiplier <span class="op">=</span> {</span>
+<span id="cb1-290"><a href="#cb1-290" aria-hidden="true" tabindex="-1"></a>    <span class="st">'High School'</span>: {<span class="st">'Male'</span>: <span class="fl">1.03</span>, <span class="st">'Female'</span>: <span class="fl">1.0</span>},</span>
+<span id="cb1-291"><a href="#cb1-291" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Bachelor"</span>: {<span class="st">'Male'</span>: <span class="fl">1.115</span>, <span class="st">'Female'</span>: <span class="fl">1.0</span>},</span>
+<span id="cb1-292"><a href="#cb1-292" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Master"</span>: {<span class="st">'Male'</span>: <span class="fl">1.0</span>, <span class="st">'Female'</span>: <span class="fl">1.07</span>},</span>
+<span id="cb1-293"><a href="#cb1-293" aria-hidden="true" tabindex="-1"></a>    <span class="st">'PhD'</span>: {<span class="st">'Male'</span>: <span class="fl">1.0</span>, <span class="st">'Female'</span>: <span class="fl">1.17</span>}</span>
+<span id="cb1-294"><a href="#cb1-294" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-295"><a href="#cb1-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-296"><a href="#cb1-296" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-297"><a href="#cb1-297" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to calculate age from birthdate</span></span>
+<span id="cb1-298"><a href="#cb1-298" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_age(birthdate):</span>
+<span id="cb1-299"><a href="#cb1-299" aria-hidden="true" tabindex="-1"></a>    today <span class="op">=</span> pd.Timestamp(<span class="st">'today'</span>)</span>
+<span id="cb1-300"><a href="#cb1-300" aria-hidden="true" tabindex="-1"></a>    age <span class="op">=</span> today.year <span class="op">-</span> birthdate.year <span class="op">-</span> ((today.month, today.day) <span class="op">&lt;</span> (birthdate.month, birthdate.day))</span>
+<span id="cb1-301"><a href="#cb1-301" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> age</span>
+<span id="cb1-302"><a href="#cb1-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-303"><a href="#cb1-303" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to calculate the adjusted salary</span></span>
+<span id="cb1-304"><a href="#cb1-304" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_adjusted_salary(row):</span>
+<span id="cb1-305"><a href="#cb1-305" aria-hidden="true" tabindex="-1"></a>    base_salary <span class="op">=</span> row[<span class="st">'salary'</span>]</span>
+<span id="cb1-306"><a href="#cb1-306" aria-hidden="true" tabindex="-1"></a>    gender <span class="op">=</span> row[<span class="st">'gender'</span>]</span>
+<span id="cb1-307"><a href="#cb1-307" aria-hidden="true" tabindex="-1"></a>    education <span class="op">=</span> row[<span class="st">'education_level'</span>]</span>
+<span id="cb1-308"><a href="#cb1-308" aria-hidden="true" tabindex="-1"></a>    age <span class="op">=</span> calculate_age(row[<span class="st">'birthdate'</span>])</span>
+<span id="cb1-309"><a href="#cb1-309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-310"><a href="#cb1-310" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Apply education multiplier</span></span>
+<span id="cb1-311"><a href="#cb1-311" aria-hidden="true" tabindex="-1"></a>    multiplier <span class="op">=</span> education_multiplier.get(education, {}).get(gender, <span class="fl">1.0</span>)</span>
+<span id="cb1-312"><a href="#cb1-312" aria-hidden="true" tabindex="-1"></a>    adjusted_salary <span class="op">=</span> base_salary <span class="op">*</span> multiplier</span>
+<span id="cb1-313"><a href="#cb1-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-314"><a href="#cb1-314" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Apply age increment (between 0.1% and 0.3% per year of age)</span></span>
+<span id="cb1-315"><a href="#cb1-315" aria-hidden="true" tabindex="-1"></a>    age_increment <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> np.random.uniform(<span class="fl">0.001</span>, <span class="fl">0.003</span>) <span class="op">*</span> age</span>
+<span id="cb1-316"><a href="#cb1-316" aria-hidden="true" tabindex="-1"></a>    adjusted_salary <span class="op">*=</span> age_increment</span>
+<span id="cb1-317"><a href="#cb1-317" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-318"><a href="#cb1-318" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ensure the adjusted salary is not lower than the base salary</span></span>
+<span id="cb1-319"><a href="#cb1-319" aria-hidden="true" tabindex="-1"></a>    adjusted_salary <span class="op">=</span> <span class="bu">max</span>(adjusted_salary, base_salary)</span>
+<span id="cb1-320"><a href="#cb1-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-321"><a href="#cb1-321" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Round the adjusted salary to the nearest integer</span></span>
+<span id="cb1-322"><a href="#cb1-322" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">round</span>(adjusted_salary)</span>
+<span id="cb1-323"><a href="#cb1-323" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-324"><a href="#cb1-324" aria-hidden="true" tabindex="-1"></a><span class="co"># Apply the function to the DataFrame</span></span>
+<span id="cb1-325"><a href="#cb1-325" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'salary'</span>] <span class="op">=</span> df.<span class="bu">apply</span>(calculate_adjusted_salary, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-326"><a href="#cb1-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-327"><a href="#cb1-327" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert 'hiredate' and 'birthdate' to datetime</span></span>
+<span id="cb1-328"><a href="#cb1-328" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'hiredate'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'hiredate'</span>]).dt.date</span>
+<span id="cb1-329"><a href="#cb1-329" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'birthdate'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'birthdate'</span>]).dt.date</span>
+<span id="cb1-330"><a href="#cb1-330" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'termdate'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'termdate'</span>]).dt.date</span>
+<span id="cb1-331"><a href="#cb1-331" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-332"><a href="#cb1-332" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span>
+<span id="cb1-333"><a href="#cb1-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-334"><a href="#cb1-334" aria-hidden="true" tabindex="-1"></a><span class="co"># Save to CSV</span></span>
+<span id="cb1-335"><a href="#cb1-335" aria-hidden="true" tabindex="-1"></a>df.to_csv(<span class="st">'HumanResources.csv'</span>, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The file <a href="https://docs.google.com/spreadsheets/d/1x6oG-BWs5oFffBcrbvs8YQG38EDDlWfMUZ55sLMDw9E/edit?usp=sharing"><strong>HumanResources.csv</strong></a> was imported into Tableau Public to make the visualizations.</p>
+</section>
+</section>
+<section id="dashboard" class="level2">
+<h2 class="anchored" data-anchor-id="dashboard">Dashboard</h2>
+<p>The dashboard was designed in order to provide summary views for high-level insights and detailed employee records for in-depth analysis according to the following instructions:</p>
+<section id="summary-view" class="level3">
+<h3 class="anchored" data-anchor-id="summary-view">1. Summary View</h3>
+<p>The summary view should be divided into <u>three main sections: Overview, Demographics, and Income Analysis.</u></p>
+<section id="overview" class="level4">
+<h4 class="anchored" data-anchor-id="overview">Overview</h4>
+<p>The Overview section should provide a snapshot of the overall HR metrics, including:</p>
+<ul>
+<li>Display the total number of hired employees, active employees, and terminated employees.</li>
+<li>Visualize the total number of hired and terminated employees over the years.</li>
+<li>Present a breakdown of total employees by department and job titles.</li>
+<li>Compare total employees between headquarters (HQ) and branches (New York is the HQ)</li>
+<li>Show the distribution of employees by city and state.<br>
+</li>
+</ul>
+</section>
+<section id="demographics" class="level4">
+<h4 class="anchored" data-anchor-id="demographics">Demographics</h4>
+<p>The Demographics section should offer insights into the composition of the workforce, including:</p>
+<ul>
+<li>Present the gender ratio in the company.</li>
+<li>Visualize the distribution of employees across age groups and education levels.</li>
+<li>Show the total number of employees within each age group.</li>
+<li>Show the total number of employees within each education level.</li>
+<li>Present the correlation between employees’s educational backgrounds and their performance ratings.</li>
+</ul>
+</section>
+<section id="income" class="level4">
+<h4 class="anchored" data-anchor-id="income">Income</h4>
+<p>The income analysis section should focus on salary-related metrics, including:</p>
+<ul>
+<li>Compare salaries across different education levels for both genders to identify any discrepancies or patterns.</li>
+<li>Present how the age correlate with the salary for employees in each department.</li>
+</ul>
+</section>
+</section>
+<section id="employee-records-view" class="level3">
+<h3 class="anchored" data-anchor-id="employee-records-view">2. Employee Records View</h3>
+<ul>
+<li>Provide a comprehensive list of all employees with necessary information such as name, department, position, gender, age, education, and salary.</li>
+<li>Users should be able to filter the list based on any of the available columns.</li>
+</ul>
+<p>The dashboard has a navigation panel (left side) with buttons to change between the <strong>Summary</strong> and the <strong>Employee Records</strong> view. Both views have interactive filters that can be opened with buttons and by clicking on the charts. You can hover over the graphs to get more information about the each metric. Several calculated fields were required to make the different visualizations, such as the “Hired” or “Terminated” status, the length of hire, age groups, etc.</p>
+<p>In regards to the aesthetic design of the dashboard, the final look was achieved by using a background image to get the rounded corners and the color fading of each panel. I used Pixelmator Pro, but it can be done with any other similar software (i.e.&nbsp;Figma, Illustrator, Inkscape, etc.).</p>
+<blockquote class="blockquote">
+<p><em>*This project was done following an amazing step-by-step tutorial done by the YouTube channel <a href="https://www.youtube.com/watch?v=UcGF09Awm4Y">DataWithBaraa</a>.</em></p>
+</blockquote>
+<div class="tableauPlaceholder" id="viz1722892766049" style="position: relative"><noscript><a href="https://youtu.be/UcGF09Awm4Y"><img alt="HR | Summary " src="https://public.tableau.com/static/images/HR/HR_dashboard_17225594451910/HRSummary/1_rss.png" style="border: none"></a></noscript><object class="tableauViz" style="display:none;"><param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"> <param name="embed_code_version" value="3"> <param name="site_root" value=""><param name="name" value="HR_dashboard_17225594451910/HRSummary"><param name="tabs" value="no"><param name="toolbar" value="yes"><param name="static_image" value="https://public.tableau.com/static/images/HR/HR_dashboard_17225594451910/HRSummary/1.png"> <param name="animate_transition" value="yes"><param name="display_static_image" value="yes"><param name="display_spinner" value="yes"><param name="display_overlay" value="yes"><param name="display_count" value="yes"><param name="language" value="en-US"></object></div>                <script type="text/javascript">                    var divElement = document.getElementById('viz1722892766049');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1400px';vizElement.style.height='827px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/margar1tava\.quarto\.pub\/portfolio\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>made with <a href="https://quarto.org">Quarto</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

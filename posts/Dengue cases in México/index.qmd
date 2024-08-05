@@ -19,7 +19,7 @@ For this analysis, the data wrangling was done with **R** using the {tidyverse} 
 
 ### 1) About the data
 
-The data for this project was downloaded from the Mexican [Health Secretary](https://datos.gob.mx/busca/dataset/bases-de-datos-dengue-en-mexico) database webpage. The collected data spans from the 1st of January to the 4th of June 2024. The day cases are recorded are later than the reported date of the start of symptoms, so the monitoring of cases has a lag between the symptoms and when they are reported, which can be several days later.
+The data for this project was downloaded from the Mexican [Health Secretary](https://datos.gob.mx/busca/dataset/bases-de-datos-dengue-en-mexico) database webpage. The collected data spans from the **1st of January to the 4th of June 2024**. The day cases are reported is later than the start of symptoms date, so the monitoring of cases has a lag between the symptoms and when they are reported, which can be several days later.
 
 Three files were downloaded: 1) the first is a .csv file with the actual dengue data [Database of Dengue in Mexico](https://datos.gob.mx/busca/dataset/bases-de-datos-dengue-en-mexico/resource/6c2f401c-2005-4403-857f-472388a326d1) (even thought the title is not updated and it says 2020, after inspecting it, the file does indeed contain the 2024 data). 2) The second and 3) third are .xlsx files, and they are downloaded together in a folder. They contain the [Dictionary and Catalog of Dengue](https://datos.gob.mx/busca/dataset/bases-de-datos-dengue-en-mexico/resource/6e63b32e-14b4-45b2-951b-a5f872deb99c). The catalog contains the keys for all the variables in the dengue database, and the dictionary contains the description of the variables.
 

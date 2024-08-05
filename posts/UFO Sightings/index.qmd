@@ -1,5 +1,5 @@
 ---
-title: "Reports of UFO Sightings"
+title: "Reports of UFO Sightings | Looker Studio"
 author: "Margarita Valdés A."
 date: "2024-07-16"
 description: "This analysis shows the reported cases of UFO sightings to NUFORC"

@@ -2,7 +2,7 @@
 title: "Human Resources Dashboard | Tableau"
 author: "Margarita Valdés A."
 date: today 
-description: "This porject is a complex dashboard in Tablau using mock data to mimic"
+description: "Tableau dashboard using HR mock data"
 categories: [Data Visualization, Tableau, Python, ChatGPT]
 title-block-banner: "#464146" 
 title-block-banner-color: "#119da4"

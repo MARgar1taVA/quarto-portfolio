@@ -1,0 +1,173 @@
+---
+title: "Website Activity Dasboard | PowerBI"
+author: "Margarita Valdés A."
+date: 09/25/2024
+description: "PowerBI dashboard using data from a fictional company called Bicycle Empire"
+categories: [Data Visualization, PowerBI, KPIs]
+title-block-banner: "#03A0B5" 
+title-block-banner-color: "#C5C9D0"
+image: "dashboard.png"
+format:
+  html:
+    page-layout: full
+    toc: true
+    df-print: paged
+draft: false
+---
+
+# Website Activity Dashboard
+
+This dashboard consists of website activity mock data from a fictional company called "*Bicycle Empire*". This project was a technical exercise I submitted for a company where I was interviewing for a **PowerBI analyst** position. The exercise consisted on recreating all the main elements of the **Reference Dashboard** they sent me and to add a few of my own figures and elements. The dashboard in the right is the one made and submitted back to them.
+
+Since I don't have the paid version of PowerBI, I share a few screenshots of the project.
+
+::: {layout-ncol="2"}
+![**Reference Dashboard**](reference.png){height="3in"}
+
+![**Submitted Dashboard**](dashboard.png){height="3in"}
+:::
+
+The requirements they gave consisted of the following **KPI's**, calculated measures, and elements:
+
+<div>
+
+1\) **Reach**: calculated as the distinct count of Cust_id.
+
+2\) **Reach WoW**: % change in reach (week over week).
+
+a\. If the number is negative, the number must automatically change to red. If it is positive it should be green.
+
+b\. The number must be dynamic and always show the comparison of the last week selected vs the previous week.
+
+3\) **Impressions**: count of cust_id where activity classification = Impression.
+
+4\) **Impressions WoW**: % change in Impressions (week over week).
+
+a\. If the number is negative, the number must automatically change to red. If it is positive it should be green.
+
+b\. The number must be dynamic and always show the comparison of the last week selected vs the previous week.
+
+5\) **Cumulative Reach**: Ongoing accumulation of the Reach measure.
+
+6\) **Data through**: Should show the latest date from the selected date range.
+
+</div>
+
+### About the Data
+
+They sent me three csv files one with the *Fact Table*, and two Dimension tables for the *Activity Classification* and *Brand Category*. I loaded the files int to Power Bi and proceeded to inspect and clean the data.
+
+**Fact Table:**
+
+```{r}
+#| label: read-data
+#| warning: false
+#| echo: false
+
+library(tidyverse)
+
+data <- read_csv(file = "Data.csv")
+
+data
+```
+
+**Activity Classification:**
+
+```{r}
+#| label: act_data
+#| warning: false
+#| echo: false
+
+activity <- read_csv(file = "Activity Classification.csv")
+brand <- read_csv(file = "Brand - Category.csv")
+
+activity
+```
+
+**Brand Classification:**
+
+```{r}
+#| label: brand_data
+#| warning: false
+#| echo: false
+
+brand <- read_csv(file = "Brand - Category.csv")
+
+brand
+```
+
+### Data Cleaning
+
+To clean the data and for the ETL (Extract, Transform, and Load) process, the following instructions were given:
+
+**ETL:**
+
+1)  Identify and remove unecessary columns to make the data load faster
+
+2)  clean the brand name
+
+3)  Remove "0" in Cust_ids
+
+4)  Check data types and headers
+
+5)  Remove duplicated if necessary
+
+**Table and relationships:**
+
+1)  Create a calendar Table. Add a "Start of the Week" column and use it for the main chart
+
+2)  Create the necessary relationships between tables
+
+**Measures and Columns:**
+
+1)  Create the necessary measures to show all the KPI's in the reference dashboard.
+
+2)  Create a calculated column for tier in the category table using this information:
+
+| Category   | Tier   |
+|------------|--------|
+| Andromeda  | Top    |
+| Whirlpool  | Top    |
+| Triangulum | Middle |
+| Black Hawk | Middle |
+| Centaurus  | Low    |
+| Starfish   | Low    |
+
+From all the instructions above I proceeded to clean the data in the **Power Query Editor**, deleting a few unnecessary columns and filtering out rows with 0 in the field Cust_id. I cleaned the Brand column by extracting the name before the "-" and replaced the name "Kronus" for "Cronus". After checking that the data types of all columns were correct, i closed the editor and in the Table View I proceeded to create a **Calendar Table** and a table to store the calculated measurements. I also added a new column to the Brand Classification table to add the Tier Category using the formula **SWITCH()**.
+
+In the **Model View** I properly connected all the tables using a **Star Schema** and proceeded to do the calculations for the required KPI's.
+
+::: {layout-ncol="2"}
+
+![**Cleaned Data**](data_clean.png){height="3in"} 
+
+![**Calendar Table**](date_table.png){height="3in"}
+:::
+
+::: {layout-ncol="2"}
+![**Model View**](schema.png){height="3in"} 
+
+![**Calculated Measurments**](measurments.png){height="3in"}
+:::
+
+
+### Dashboard 
+
+After finishing all the asked requirements, including all the filters, I reviewed the data to understand what other information could be useful to the hypothetical business. I already had metrics for Reach and Impressions, but decided to also add the metrics for Engagement, I also added bar charts to view all three metrics by Country and by Brand. 
+
+After confirming all metrics were dynamic and all filters worked properly, the final step was to arrange the design for the KPI's, select colors for my categories and add a background. 
+
+
+![**Final Dashboard**](dashboard.png)
+
+![**Filtered Dashboard**](dashboard_3.png)
+
+
+
+**Reach:** How many individual people see your post or Ad. 
+
+**Impressions:** How many times your content appears on someone's screen. 
+
+**Engagement:** The number of interactions your content received from users (likes, comments, shares, saves, etc.). 
+
+

@@ -6,7 +6,7 @@ date-modified: today
 title-block-banner: "#AFCCDA"
 ---
 
-[download Margarita's resume](https://docs.google.com/document/d/1m4r2akh_qQFsrOj_BaaNtxu6KzmgCbC_aKOgAKpZ7iw/edit?usp=sharing)
+[download Margarita's resume](https://drive.google.com/file/d/1dGj6ynKStHAB_-93tAGSHQ5x5CcD4WJu/view?usp=sharing)
 
 ## Skills
 
@@ -14,7 +14,7 @@ title-block-banner: "#AFCCDA"
 -   R (dplyr, ggplot2, tidyr, gt)
 -   Excel/Google Sheets (VLookup, Conditional formatting, Pivot Tables)
 -   Parameterized reports
--   Tableau & Looker Studio
+-   Tableau \| Looker Studio \| PowerBI
 -   Data cleaning and wrangling with R
 -   Communication and presentation skills
 -   Strong data visualization skills

@@ -2,10 +2,10 @@ project:
   type: website
 
 website:
-  title: "Margarita Valdés A., PhD"
+  title: "Margarita Valdés, PhD"
   description: "This is Margarita Valdes' personal Data Analysis portfolio"
   site-url: "https://margar1tava.quarto.pub/portfolio/"
-  favicon: "profile.jpg"
+  favicon: "profile_picture_purple_bg_Small.jpg"
   page-footer: 
     left:
       made with [Quarto](https://quarto.org)
